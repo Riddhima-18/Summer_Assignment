@@ -1,15 +1,15 @@
 class Solution {
-    public int maxArea(int[] height) {
-        int n =height.length;
-        int maxWater=0;
-        for(int i =0; i<n; i++) {
-            for(int j=i+1; j<n; j++) {
-                int width = j - i;
-                int minHeight=Math.min(height[i], height[j]);
-                int area =width*minHeight;
-                maxWater =Math.max(maxWater, area);
-            }
+    public void reverseString(char[] s) {
+        int left = 0;
+        int right = s.length - 1;
+
+        while (left < right) {
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+
+            left++;
+            right--;
         }
-        return maxWater;
     }
 }
